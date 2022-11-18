@@ -34,6 +34,9 @@ body {
 
 .colored {
   background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .btn {
@@ -44,11 +47,11 @@ body {
 }
 
 .heading {
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 600;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  word-spacing: ;
+}
+
+.sub-heading {
+  font-weight: 600;
 }
 
