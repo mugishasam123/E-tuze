@@ -2,6 +2,7 @@
     border-radius: 4px;
     box-shadow: 9px 9px 3px 0 rgba(0, 0, 0, 0.2);
     width: 30%;
+    height: fit-content;
     position: relative;
 }
 
