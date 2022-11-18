@@ -32,9 +32,21 @@ body {
   font-size: 1.6rem;
 }
 
+.colored {
+  background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
+}
+
 .btn {
   background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
   color: var(--font-color-1);
   padding: 0.6rem 2rem;
   border-radius: 0.5rem;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 600;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

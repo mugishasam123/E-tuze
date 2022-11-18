@@ -1,12 +1,12 @@
+import Benefit from "./components/benefits/index.jsx";
 
-function App() {
+const App = () => {
 
   return (
     <div className="App">
-      <h1 className="text-red-500">hello</h1>
-      <button className="btn" >BIG</button>
+      <Benefit />
     </div>
   )
 }
 
-export default App
+export default App;
