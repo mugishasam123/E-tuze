@@ -20,6 +20,7 @@ const RightLicenced = () => {
           }
         </ul>
       </div>
+      <button className='btn w-full md:w-1/2'>Get matched</button>
     </div>
   )
 }

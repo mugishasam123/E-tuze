@@ -20,6 +20,7 @@ const therapists = [
 
 const SlideShow = () => {
   return (
+    <>
     <div className='card'>
       <Swiper
         spaceBetween={50}
@@ -45,6 +46,7 @@ const SlideShow = () => {
         ))}
       </Swiper>
     </div>
+    </>
   )
 }
 
