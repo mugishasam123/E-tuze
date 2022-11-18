@@ -1,32 +1,40 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-    --color-primary: #0061ff;
-    --color-secondary: #5BD0A4;
-    --color-grey: #646464;
-    --font-color-1: #fff;
-    --font-color-2: #7d7d7d;
-  }
-  
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-  
-  html {
-    /* * Defines what 1rem is */
-    font-size: 62.5%;
-  }
-  
-  body {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-size: 1.6rem;
-  }
+  --color-primary: #024dc5;
+  --color-secondary: #65e6b5;
+  --color-grey: #646464;
+  --font-color-1: #fff;
+  --font-color-2: #7d7d7d;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* * Defines what 1rem is */
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 1.6rem;
+}
+
+.btn {
+  background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
+  color: var(--font-color-1);
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+}
