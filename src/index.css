@@ -39,6 +39,10 @@ body {
   color: transparent;
 }
 
+.bg-1 {
+  background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
+}
+
 .btn {
   background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
   color: var(--font-color-1);
