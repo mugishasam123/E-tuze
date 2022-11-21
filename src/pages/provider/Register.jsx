@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoNav from '../../components/common/LogoNav/LogoNav';
-import SignupForm from '../../components/common/SignupForm/SignupForm';
+import SignupForm from '../../components/common/RegisterForm/SignupForm';
 import logo from '../../assets/logo-croped.png';
 
 const Register = () => {
