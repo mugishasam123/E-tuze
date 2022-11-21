@@ -13,14 +13,14 @@ const RightLicenced = () => (
         {
             sickness.map((item) => (
               <li className="flex my-2 justify-center items-center gap-2 text-2xl" key={`${item}`}>
-                <BsCheckLg className="text-sm text-blue-500" />
+                <BsCheckLg className="text-sm color-1" />
                 {item}
               </li>
             ))
           }
       </ul>
     </div>
-    <Button />
+    <Button text="Get Matched" />
   </div>
 );
 

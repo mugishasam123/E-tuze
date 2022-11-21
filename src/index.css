@@ -41,6 +41,10 @@ body {
   color: transparent;
 }
 
+.color-1 {
+  color: var(--font-color-3);
+}
+
 .bg-1 {
   background: var(--color-tertiary);
 }
@@ -54,6 +58,20 @@ body {
   color: var(--font-color-1);
   padding: 0.6rem 2rem;
   border-radius: 0.5rem;
+}
+
+.sub-btn {
+  background: linear-gradient(
+    100deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .heading {
