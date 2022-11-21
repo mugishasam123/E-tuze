@@ -2,7 +2,7 @@ import React from 'react';
 import { BsCheckLg } from 'react-icons/bs';
 import Button from '../common/Button/Button';
 
-const sickness = ['Depression', 'Anxiety', 'Stress', 'Relationship', 'Family', 'Work', 'School', 'Anxiety & Stress', 'Anxiety & Stress1', 'Anxiety & Stress2', 'Anxiety & Stress3', 'Anxiety & Stress4', 'Anxiety & Stress5', 'Anxiety & Stress6', 'Anxiety & Stress7', 'Anxiety & Stress8', 'Anxiety & Stress9'];
+const sickness = ['Depression', 'Relationships', 'Parenting', 'RBTQIA+', 'Chronic illness', 'Eating Disorders', 'Anger managemnet', 'Anxiety & Stress', 'Childhood abuse', 'Mood disorders', 'OCD', 'Trauma & Grief', 'Substance abuse', 'Family conflict', 'Addiction...'];
 
 const RightLicenced = () => (
   <div className="w-full  md:w-[50%]">

@@ -9,12 +9,12 @@ const therapists = [
   {
     name: 'Dr. John Doe',
     image: 'https://randomuser.me/api/portraits/men/1.jpg',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
   },
   {
     name: 'Dr. Jane Doe',
     image: 'https://randomuser.me/api/portraits/men/2.jpg',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quae.',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
   },
 ];
 
