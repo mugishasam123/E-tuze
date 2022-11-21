@@ -35,6 +35,9 @@ body {
 .btn {
   background: linear-gradient(100deg, var(--color-primary), var(--color-secondary));
   color: var(--font-color-1);
-  padding: 0.6rem 2rem;
-  border-radius: 0.5rem;
+}
+.text-color{
+ 
+  color: #2bcdaa;
+
 }
