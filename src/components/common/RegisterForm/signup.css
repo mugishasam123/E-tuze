@@ -1,0 +1,11 @@
+.require {
+    position: relative;
+}
+
+.require::after {
+    content: "*";
+    color: red;
+    position: absolute;
+    top: 0;
+    right: -10px;
+}
