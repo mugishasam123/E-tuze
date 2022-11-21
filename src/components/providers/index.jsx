@@ -3,7 +3,7 @@ import SlideShow from './SlideShow';
 import RightLicenced from './RightLicensed';
 
 const Providers = () => (
-  <section  className="flex flex-col-reverse m-2 md:my-40 p-3 space-y-10  items-center justify-center md:flex-row items-stretch justify-around">
+  <section  className="flex flex-col-reverse m-2 md:my-40 p-12 md:p-0 space-y-10  md:space-x-12 justify-center md:flex-row ">
     <RightLicenced />
     <SlideShow />
   </section>

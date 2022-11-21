@@ -30,7 +30,7 @@ const QuickLinks = () => {
       <div className="space-y-3">
         <h3 className=" text-3xl font-bold">Get in touch</h3>
 
-        <div className="flex justify-center gap-2 mb-3 text-5xl">
+        <div className="flex md:justify-center gap-2 mb-3 text-5xl">
           <a href="#">
             <FaFacebookSquare className=" text-color hover:opacity-60" />
           </a>

@@ -9,7 +9,6 @@ const Hero = () => {
       <NavBar />
       <div className="space-y-16">
         <div className=" relative pt-20  h-fit lg:h-screen flex justify-center px-16 ">
-         
           <div className="space-y-10 py-11 ">
             <h2 className="text-5xl text-color">
               Feeling better starts with a single message

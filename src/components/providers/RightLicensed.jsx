@@ -5,7 +5,7 @@ import Button from '../common/Button/Button';
 const sickness = ['Depression', 'Relationships', 'Parenting', 'Chronic illness', 'Eating Disorders', 'Anger managemnet', 'Anxiety & Stress', 'Childhood abuse', 'Mood disorders', 'OCD', 'Trauma & Grief', 'Substance abuse', 'Family conflict', 'Addiction...'];
 
 const RightLicenced = () => (
-  <div className="w-full  md:w-[50%] space-y-6">
+  <div className="w-full  md:w-[50%] space-y-6 mt-12 md:mt-0">
     <h2 className="text-6xl font-semibold colored">Meet our network of Licenced providers</h2>
     <p className="text-gray-700 text-3xl">We have a network of licenced providers who are ready to help you with your mental health needs. </p>
     <div>

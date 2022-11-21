@@ -3,7 +3,7 @@ import JoinText from './JoinText';
 import JoinCard from './JoinCard';
 
 const Join = () => (
-  <section id='providers' className="md:my-40">
+  <section id='providers' className="md:my-40 ">
     <JoinText />
     <div className="flex flex-col gap-10 mx-20 my-10 md:flex-row md:justify-center">
       <JoinCard
