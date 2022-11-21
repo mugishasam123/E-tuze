@@ -1,9 +1,9 @@
 import React from 'react';
 import LogoNav from '../../components/common/LogoNav/LogoNav';
-import LoginForm from '../../components/common/LoginForm/LoginForm';
+import SignupForm from '../../components/common/SignupForm/SignupForm';
 import logo from '../../assets/logo-croped.png';
 
-const ProviderLogin = () => {
+const Register = () => {
   return (
     <>
     <nav>
@@ -13,10 +13,10 @@ const ProviderLogin = () => {
       <div className='w-[80%] md:w-[30%]'>
       <img src={logo} alt='logo' />
       </div>
-      <LoginForm />
+      <SignupForm />
     </main>
     </>
   )
 }
 
-export default ProviderLogin;
+export default Register;
