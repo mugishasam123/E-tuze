@@ -1,14 +1,13 @@
-import Benefit from './components/benefits/index';
-import Providers from './components/providers/index';
-import Join from './components/join/index';
-import Footer from './components/footer/index';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Login from './pages/client/Login';
 
 const App = () => (
   <div className="App">
-    <Benefit />
-    <Providers />
-    <Join />
-    <Footer />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/client/login" element={<Login />} />
+    </Routes>
   </div>
 );
 

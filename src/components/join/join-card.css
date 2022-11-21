@@ -4,3 +4,9 @@
     padding: 2rem;
     width: 40%;
 }
+
+@media screen and (max-width: 768px) {
+    .join-card {
+        width: 100%;
+    }
+}
