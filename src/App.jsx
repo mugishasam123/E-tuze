@@ -1,12 +1,14 @@
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Login from './pages/client/Login';
 
-function App() {
+const App = () => (
+  <div className="App">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/client/login" element={<Login />} />
+    </Routes>
+  </div>
+);
 
-  return (
-    <div className="App">
-      <h1 className="text-red-500">hello</h1>
-      <button className="btn" >BIG</button>
-    </div>
-  )
-}
-
-export default App
+export default App;
