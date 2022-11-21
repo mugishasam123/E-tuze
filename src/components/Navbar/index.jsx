@@ -52,7 +52,7 @@ const NavBar = () => {
           <li onClick={()=>setIsMenuOpen(false)}>
             <a
               className="text-3xl font-semibold tracking-wider text-color"
-              href="#"
+              href="/client/login"
             >
               Log In
             </a>
