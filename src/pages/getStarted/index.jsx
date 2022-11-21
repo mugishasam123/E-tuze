@@ -1,5 +1,5 @@
 import React from 'react'
-import LogoNav from '../../components/common/LogoNav/LogoNav'
+import LogoNav from '../../components/common/LogoNav/LogoNav';
 import Card from '../../components/getStarted/card'
 
 const GetStarted = () => {

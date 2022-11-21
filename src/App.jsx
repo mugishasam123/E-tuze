@@ -4,6 +4,7 @@ import Login from './pages/client/Login';
 import ProviderLogin from './pages/provider/Login';
 import Register from './pages/provider/Register';
 import GetStarted from './pages/getStarted/index';
+import Questionaire from './pages/questionaire/index';
 
 const App = () => (
   <div className="App">
@@ -13,6 +14,7 @@ const App = () => (
       <Route path="/provider/login" element={<ProviderLogin />} />
       <Route path="/provider/register" element={<Register />} />
       <Route path="/get-started" element={<GetStarted />} />
+      <Route path="/questionaire" element={<Questionaire />} />
     </Routes>
   </div>
 );

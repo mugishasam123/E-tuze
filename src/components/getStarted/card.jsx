@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const card = ({bg, title, description, children, border}) => {
   return (
@@ -8,7 +9,7 @@ const card = ({bg, title, description, children, border}) => {
             {children}
         </div>
       <p className='w-[70%] text-gray-600'>{description}</p>
-      <a href="#" className='color-1 self-end font-bold'>Continue &raquo;</a>
+      <Link to="/questionaire" className='color-1 self-end font-bold'>Continue &raquo;</Link>
     </div>
   )
 }
