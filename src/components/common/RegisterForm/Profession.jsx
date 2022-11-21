@@ -11,7 +11,7 @@ const Profession = () => {
         <em className='text-gray-500 block'>PNG/JPG/JPEG</em>
         <input type='file' name='profile' id='profile' placeholder='Attach photo' required className='border border-gray-500 mb-5 w-full rounded-r-xl focus:border-green-600 focus:outline-none' />
         <div className='my-5'>
-            <p className='text-gray-500 require'>Are you independently licenced as a therapist in your state of practice?</p>
+            <label className='text-gray-500 block'><span className='require mr-5'></span>Are you independently licenced as a therapist in your state of practice?</label>
             <input type='radio' name='yes' id='yes' className='inline-block' />
             <label htmlFor='yes' className='text-gray-500 mr-5'>Yes</label>
             <input type='radio' name='no' id='no' className='inline-block' />
@@ -19,7 +19,7 @@ const Profession = () => {
         </div>
         <div className='my-5'>
             <input type='checkbox' name='agree' id='agree' required className='mr-3 inline-block' />
-            <label htmlFor='agree' className='text-gray-500'>By providing us with your phone number and clicking "Register",
+            <label htmlFor='agree' className='text-gray-500'><span className='require mr-5'></span>By providing us with your phone number and clicking "Register",
              you agree that we may call or text you regarding your application.</label>
         </div>
     </fieldset>

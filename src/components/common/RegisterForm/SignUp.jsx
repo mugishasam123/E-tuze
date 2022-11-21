@@ -16,8 +16,8 @@ const SignUp = () => {
         <label htmlFor='password' className='text-gray-500 require'>Confirm Password</label>
         <input type='password' name='password' id='password' placeholder='Re-enter your Password' required className='border  border-gray-500  h-16 w-full rounded-xl placeholder:px-2 p-3 focus:border-green-600 focus:outline-none' />
         <div className='my-5'>
-        <input type='checkbox' name='remember' id='remember' className='mr-3 inline-block' />
-        <label htmlFor='remember' className='text-gray-500'>By signing up, you agree to the terms and conditions of E-Tuze platform </label>
+        <input type='checkbox' name='accept' id='accept' required className='mr-3 inline-block' />
+        <label htmlFor='accept' className='text-gray-500'><span className='require mr-5'></span>By signing up, you agree to the terms and conditions of E-Tuze platform </label>
         </div>
     </fieldset>
   )
