@@ -12,7 +12,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className={`${isMenuOpen?'fixed space-y-44 shadow-xl z-50 left-0 top-0 bottom-0 right-0 bg-gray-200 h-full p-12' :'md:flex md:justify-between items-center  shadow-lg px-10 py-8'}  `}>
+    <div className={`${isMenuOpen?'fixed space-y-44 shadow-xl z-50 left-0 top-0 bottom-0 right-0 bg-gray-200 h-full p-12' :'md:flex md:justify-between items-center  shadow-lg px-10 py-3'}  `}>
      <div className="flex justify-between items-center">
    
       <a className="flex items-center "onClick={()=>setIsMenuOpen(false)} href="#">
@@ -43,7 +43,7 @@ const NavBar = () => {
           <li onClick={()=>setIsMenuOpen(false)}>
             <a
               className="text-3xl font-semibold tracking-wider text-color"
-              href="#"
+              href="#providers"
             >
               Join Our Network
             </a>

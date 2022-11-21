@@ -3,7 +3,7 @@ import NavBar from "../Navbar";
 import welcome from "../../assets/welcome.png";
 import video from "../../assets/video.mp4";
 
-const Home = () => {
+const Hero = () => {
   return (
     <div className="py-3  relative">
       <NavBar />
@@ -97,4 +97,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;
