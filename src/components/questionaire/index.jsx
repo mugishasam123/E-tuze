@@ -1,60 +1,33 @@
-import React, { useState } from 'react'
+/* eslint-disable react/forbid-prop-types */
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import 'survey-core/modern.min.css';
+import 'survey-core/defaultV2.min.css';
+import { StylesManager, Model } from 'survey-core';
+import { Survey } from 'survey-react-ui';
 
-const questions = [
-  {
-    id: 1,
-    question: 'Where do you live?',
-    choice: ['Kigali', 'Rubavu', 'Muhanga', 'Rusizi'],
-  },
-  {
-    id: 2,
-    question: 'What is your gender?',
-    choice: ['Male', 'Female', 'Transgender', 'Prefer not to say'],
-  },
-  {
-    id: 3,
-    question: 'How do you feel when you are with others?',
-    choice: ['Excited', 'Shy', 'Bored', 'Anxious'],
-  },
-]
 
-const QuestionaireComp = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(1);
-  const handleClick = () => {
-    setCurrentQuestion(currentQuestion + 1);
-  }
+StylesManager.applyTheme('defaultV2');
 
-  if(currentQuestion > questions.length) {
-    return <h1>Thank you for your time</h1>
-    }
+
+const QuestionaireComp = ({surveyJSON, sendDataToServer}) => {
+  const navigate = useNavigate();
+
+  const survey = new Model(surveyJSON);
+  survey.onComplete.add((sender) => {
+    sendDataToServer(sender);
+    navigate('/submitted');
+  });
 
   return (
-    <form>
-      {questions
-        .filter((question) => question.id === currentQuestion)
-        .map((item) => (
-          <>
-            <label className="text-2xl font-bold text-center mb-10">
-              {item.question}
-            </label>
-            <ul className="border rounded-md text-center">
-              {item.choice.map((choice, index) => (
-                <>
-                  <option
-                    key={index}
-                    onClick={handleClick}
-                    value={choice}
-                    className="border-b py-4 cursor-pointer"
-                  >
-                    {choice}
-                  </option>
-                </>
-              ))}
-            </ul>
-          </>
-        ))}
-    </form>
-  )
-}
+    <Survey model={survey} />
+  );
+};
 
-export default QuestionaireComp
+QuestionaireComp.propTypes = {
+  surveyJSON: PropTypes.object.isRequired,
+  sendDataToServer: PropTypes.func.isRequired,
+};
+
+export default QuestionaireComp;
