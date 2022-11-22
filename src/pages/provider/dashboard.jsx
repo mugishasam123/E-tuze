@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import TopBar from '../../components/dashboard/TopBar';
 
 const ProviderDashboard = () => {
   return (
-    <div>ProviderDashboard</div>
+    <>
+      <TopBar />
+    </>
   )
 }
 
