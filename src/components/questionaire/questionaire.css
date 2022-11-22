@@ -1,0 +1,25 @@
+.sd-btn {
+  background: linear-gradient(
+    100deg,
+    var(--color-primary),
+    var(--color-secondary)
+  ) !important;
+  color: var(--font-color-1) !important;
+  padding: 0.6rem 2rem !important;
+  border-radius: 0.5rem !important;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .sv-logo--right {
+      margin-left: 0 !important;
+      margin-right: 2rem;
+    }
+  
+    .sd-root-modern.sd-root-modern--mobile .sd-title.sd-container-modern__title {
+      flex-direction: column-reverse !important;
+    }
+  }
+  

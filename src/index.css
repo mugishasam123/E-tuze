@@ -82,14 +82,3 @@ body {
 .sub-heading {
   font-weight: 600;
 }
-
-@media screen and (max-width: 768px) {
-  .sv-logo--right {
-    margin-left: 0 !important;
-    margin-right: 2rem;
-  }
-
-  .sd-root-modern.sd-root-modern--mobile .sd-title.sd-container-modern__title {
-    flex-direction: column-reverse !important;
-  }
-}

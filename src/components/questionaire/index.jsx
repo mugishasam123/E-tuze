@@ -6,6 +6,7 @@ import 'survey-core/modern.min.css';
 import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
+import './questionaire.css';
 
 
 StylesManager.applyTheme('defaultV2');
