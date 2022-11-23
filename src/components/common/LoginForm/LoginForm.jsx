@@ -51,10 +51,9 @@ const LoginForm = () => {
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
       console.log("trying to login",user);
-     // navigate('/provider/dashboard/mainttt')
       if(user.role==='provider'){
         console.log("navigate")
-       window.location.href='/provider/dashboard/main'
+       navigate('/provider/dashboard/main')
       }
       
       
