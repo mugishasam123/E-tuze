@@ -10,10 +10,10 @@ const SideNav = () => {
         </div>
         <div className="menu">
             <ul>
-                <li className='mb-5'><Link to='/' className='text-4xl'>Home</Link></li>
-                <li className='mb-5'><Link to='/' className='text-4xl'>About</Link></li>
-                <li className='mb-5'><Link to='/' className='text-4xl'>Contact</Link></li>
-                <li className='mb-5'><Link to='/' className='text-4xl'>Services</Link></li>
+                <li className='mb-5'><Link to='/provider/dashboard/main' className='text-4xl'>Dashboard</Link></li>
+                <li className='mb-5'><Link to='/provider/dashboard/requests' className='text-4xl'>Requests</Link></li>
+                <li className='mb-5'><Link to='/provider/dashboard/messages' className='text-4xl'>Messages</Link></li>
+                <li className='mb-5'><Link to='/provider/dashboard/settings' className='text-4xl'>Settings</Link></li>
             </ul>
         </div>
     </aside>
