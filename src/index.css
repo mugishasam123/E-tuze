@@ -49,6 +49,14 @@ body {
   background: var(--color-tertiary);
 }
 
+.bg-2 {
+  background: linear-gradient(
+    170deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
+
 .btn {
   background: linear-gradient(
     100deg,
@@ -81,4 +89,8 @@ body {
 
 .sub-heading {
   font-weight: 600;
+}
+
+.active {
+  color: var(--color-secondary);
 }
