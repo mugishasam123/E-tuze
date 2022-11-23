@@ -1,9 +1,9 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import NavBar from "../Navbar";
-import welcome from "../../assets/welcome.png";
-import video from "../../assets/video.mp4";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="py-3  relative">
       <NavBar />
