@@ -8,6 +8,7 @@ import Main from './components/dashboard/Main';
 import Requests from './components/dashboard/Requests';
 import Messages from './components/dashboard/Messages';
 import Settings from './components/dashboard/Settings';
+import Response from './components/dashboard/Response';
 import GetStarted from './pages/getStarted/index';
 import Questionaire from './pages/questionaire/index';
 import Thank from './pages/Thank/Thank';
@@ -23,6 +24,7 @@ const App = () => (
       <Route path="/provider/dashboard" element={<ProviderDashboard />}>
         <Route path="/provider/dashboard/main" element={<Main />} />
         <Route path="/provider/dashboard/requests" element={<Requests />} />
+        <Route path="/provider/dashboard/requests/:id" element={<Response />} />
         <Route path="/provider/dashboard/messages" element={<Messages />} />
         <Route path="/provider/dashboard/settings" element={<Settings />} />
       </Route>
