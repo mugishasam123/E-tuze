@@ -42,7 +42,7 @@ const Response = () => {
       </section>
       <section className='flex flex-col items-center'>
         <h1 className='text-center text-3xl font-bold text-gray-600 mt-5'>Send Recomendation</h1>
-        <div className='flex justify-center gap-10 my-10 bg-white drop-shadow-lg py-5 w-[98%]'>
+        <div className='flex justify-center gap-10 my-10 bg-white drop-shadow-lg py-5 w-[95%]'>
           <a href={`mailto:${questionaire['Email']}`} className="text-3xl font-semibold tracking-wider px-6 py-4 rounded-xl btn">Via Email</a>
           <button onClick={handleResolve}  className='border border-green-500 text-3xl font-semibold tracking-wider hover:bg-green-100 px-3 py-4 rounded-xl'>Mark As Resolved</button>
         </div>
