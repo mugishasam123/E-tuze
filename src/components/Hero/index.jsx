@@ -1,6 +1,6 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import NavBar from "../Navbar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -17,22 +17,30 @@ const Hero = () => {
               What type of support are you looking for?
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10">
-              <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                <h3 className="text-4xl font-bold text-gray-600">Individual</h3>
-                <p className="text-4xl text-gray-800">Therapy for me</p>
-              </div>
-              <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                <h3 className="text-4xl font-bold text-gray-600">Couples</h3>
-                <p className="text-4xl text-gray-800">Therapy for Us</p>
-              </div>
-              <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                <h3 className="text-4xl font-bold text-gray-600">Teens</h3>
-                <p className="text-4xl text-gray-800">For ages 13-17</p>
-              </div>
-              <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                <h3 className="text-4xl font-bold text-gray-600">Psychiatry</h3>
-                <p className="text-4xl text-gray-800">Medication mgmt</p>
-              </div>
+              <Link to="/questionaire">
+                <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
+                  <h3 className="text-4xl font-bold text-gray-600">Individual</h3>
+                  <p className="text-4xl text-gray-800">Therapy for me</p>
+                </div>
+              </Link>
+              <Link to="/questionaire">
+                <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
+                  <h3 className="text-4xl font-bold text-gray-600">Couples</h3>
+                  <p className="text-4xl text-gray-800">Therapy for Us</p>
+                </div>
+              </Link>
+              <Link to="/questionaire">
+                <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
+                  <h3 className="text-4xl font-bold text-gray-600">Teens</h3>
+                  <p className="text-4xl text-gray-800">For ages 13-17</p>
+                </div>
+              </Link>
+              <Link to="/questionaire">
+                <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
+                  <h3 className="text-4xl font-bold text-gray-600">Psychiatry</h3>
+                  <p className="text-4xl text-gray-800">Medication mgmt</p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -84,12 +92,12 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <a
+          <button
             className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn"
-            href="#"
+            onClick={() => navigate("/get-started")}
           >
             Get Started
-          </a>
+          </button>
         </div>
       </div>
     </div>
