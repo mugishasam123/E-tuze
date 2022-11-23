@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   emailValidator,
   passwordValidator,
@@ -16,7 +17,7 @@ const LoginForm = () => {
   const [emailErr, setEmailErr] = useState(null);
   const [passwordErr, setPasswordErr] = useState(null);
   const [authErr, setAuthErr] = useState(null);
-
+  const navigate=useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
@@ -49,9 +50,23 @@ const LoginForm = () => {
       );
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
-      console.log(user);
+      console.log("trying to login",user);
+     // navigate('/provider/dashboard/mainttt')
+      if(user.role==='provider'){
+        console.log("navigate")
+       window.location.href='/provider/dashboard/main'
+      }
+      
+      
     } catch (error) {
-      switch (error.message) {
+      console.log(error.message)
+      setAuthErr(error.message)
+      const message=error.message
+      if(message=="Firebase: Error (auth/user-not-found)"){
+        console.log("checkty")
+        setAuthErr("You entered Wrong Email and password")
+      }
+    /*  switch (error.message) {
         case "Firebase: Error (auth/user-not-found)":
           setAuthErr("You entered Wrong Email and password");
           break;
@@ -64,7 +79,8 @@ const LoginForm = () => {
         default:
           setAuthErr("User Account doesn't exists!");
       }
-      console.log(error.message);
+      console.log(error.message);*/
+     
     }
   };
   return (
