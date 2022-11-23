@@ -14,12 +14,11 @@ import './questionaire.css';
 StylesManager.applyTheme('defaultV2');
 
 
-const QuestionaireComp = ({surveyJSON, sendDataToServer}) => {
+const QuestionaireComp = ({surveyJSON}) => {
   const navigate = useNavigate();
 
   const survey = new Model(surveyJSON);
-  survey.onComplete.add(async (sender) => {
-    sendDataToServer(sender);
+  survey.onComplete.add((sender) => {
     try {
       addDoc(collection(db, 'requests'), sender.data).then(() => {
       navigate('/submitted');
