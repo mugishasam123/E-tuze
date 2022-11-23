@@ -1,11 +1,12 @@
 import { useState,useEffect } from "react";
 
 import { MdMenu,MdClose } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/hom.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
 
   const handleMenu=()=>{
     setIsMenuOpen(!isMenuOpen)
@@ -50,21 +51,21 @@ const NavBar = () => {
           </li>
 
           <li onClick={()=>setIsMenuOpen(false)}>
-            <a
+            <button
               className="text-3xl font-semibold tracking-wider text-color"
-              href="/client/login"
+              onClick={() => navigate("/client/login")}
             >
               Log In
-            </a>
+            </button>
           </li>
 
           <li onClick={()=>setIsMenuOpen(false)}>
-            <a
+            <button
               className="text-3xl font-semibold tracking-wider px-6 py-4 rounded-xl  btn"
-              href="#"
+              onClick={()=>navigate('/get-started')}
             >
               Get Started
-            </a>
+            </button>
           </li>
         </ul>
      

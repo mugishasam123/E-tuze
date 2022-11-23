@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsCheckLg } from 'react-icons/bs';
-import Button from '../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 const sickness = ['Depression', 'Relationships', 'Parenting', 'Chronic illness', 'Eating Disorders', 'Anger managemnet', 'Anxiety & Stress', 'Childhood abuse', 'Mood disorders', 'OCD', 'Trauma & Grief', 'Substance abuse', 'Family conflict', 'Addiction...'];
 
@@ -20,12 +20,12 @@ const RightLicenced = () => (
           }
       </ul>
     </div>
-    <button
-            className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn mt-4"
-           
-          >
-            Get Matched
-          </button>
+    <Link
+      to="/get-started"
+      className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn mt-4"
+    >
+      Get Matched
+    </Link>
   </div>
 );
 
