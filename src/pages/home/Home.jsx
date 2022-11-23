@@ -8,7 +8,7 @@ import Hero from '../../components/Hero';
 const Home = () => {
   return (
     <main>
-      <Hero/>
+        <Hero/>
         <Benefit />
         <Providers />
         <Join />

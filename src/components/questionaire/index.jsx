@@ -6,6 +6,8 @@ import 'survey-core/modern.min.css';
 import 'survey-core/defaultV2.min.css';
 import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../utils/firebase';
 import './questionaire.css';
 
 
@@ -16,9 +18,16 @@ const QuestionaireComp = ({surveyJSON, sendDataToServer}) => {
   const navigate = useNavigate();
 
   const survey = new Model(surveyJSON);
-  survey.onComplete.add((sender) => {
+  survey.onComplete.add(async (sender) => {
     sendDataToServer(sender);
-    navigate('/submitted');
+    try {
+      addDoc(collection(db, 'requests'), sender.data).then(() => {
+      navigate('/submitted');
+      });
+      
+    } catch (error) {
+      console.log(error.message);
+    }
   });
 
   return (

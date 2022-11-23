@@ -39,7 +39,6 @@ const SignupForm = () => {
     if (!file) return;
     const storageRef = ref(storage, `files/${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
-    console.log(file.name);
     if (e.target.name === "profile") setProfileName(file.name);
     if (e.target.name === "resume") setResumeName(file.name);
 
@@ -57,7 +56,6 @@ const SignupForm = () => {
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          console.log(downloadURL);
           if (e.target.name === "profile") return setProfileUrl(downloadURL);
           if (e.target.name === "resume") return setResumeUrl(downloadURL);
         });
@@ -67,7 +65,6 @@ const SignupForm = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("provider", userData);
 
     if (
       resumeValidator(resumeUrl)||
@@ -97,7 +94,6 @@ const SignupForm = () => {
     setPasswordConfirmErr("")
     userData.resumeUrl=resumeUrl
     userData.photoUrl=profileUrl
-    console.log("provider2", userData);
     try{
           await createUserWithEmail(userData)
           console.log("provider registered successfully")
