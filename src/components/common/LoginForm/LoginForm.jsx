@@ -24,7 +24,6 @@ const LoginForm = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(credentials);
     if (
       emailValidator(credentials.email) ||
       passwordValidator(credentials.password)
@@ -44,26 +43,20 @@ const LoginForm = () => {
       );
 
       setAuthErr("");
-      console.log(userCredential.user.uid);
       const userPromise = await getDoc(
         doc(db, "providers", userCredential.user.uid)
       );
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
-      console.log("trying to login",user);
-     // navigate('/provider/dashboard/mainttt')
       if(user.role==='provider'){
-        console.log("navigate")
-       window.location.href='/provider/dashboard/main'
+       navigate('/provider/dashboard/main')
       }
       
       
     } catch (error) {
-      console.log(error.message)
       setAuthErr(error.message)
       const message=error.message
       if(message=="Firebase: Error (auth/user-not-found)"){
-        console.log("checkty")
         setAuthErr("You entered Wrong Email and password")
       }
     /*  switch (error.message) {

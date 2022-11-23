@@ -12,7 +12,7 @@ const Thank = () => {
         and help you with your mental health issues and also help you with your day
         to day activities.
       </p>
-      <Link to='/' className='btn mt-10 '>Return to Home</Link>
+      <Link to='/' className='mt-10 text-3xl font-semibold tracking-wider px-10 py-4 rounded-xl  btn'>Return to Home</Link>
     </main>
   )
 }

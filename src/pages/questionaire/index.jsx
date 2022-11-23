@@ -8,7 +8,6 @@ const Questionaire = () => {
       <main className='mx-2 w-full'>
         <QuestionaireComp
         surveyJSON={defaultSurveyJSON}
-        sendDataToServer={(sender) => console.log(sender.data)}
         />
       </main>
     </>
