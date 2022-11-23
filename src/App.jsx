@@ -57,7 +57,7 @@ const App = () => {
           <Route path="/provider/login" element={<ProviderLogin />} />
           <Route path="/provider/register" element={<Register />} />
           {store?.user?.role === "provider" && (
-            <Route path="/provider/dashboard" element={<ProviderDashboard />}>
+            <Route path="/provider/dashboard" element={<ProviderDashboard user={store.user}/>}>
               <Route path="/provider/dashboard/main" element={<Main />} />
               <Route
                 path="/provider/dashboard/requests"
