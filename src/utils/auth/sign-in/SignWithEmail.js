@@ -9,9 +9,9 @@ const signInWithEmail = async (email,password) => {
       password,
     );
 
-    return 'loggedIn';
+    return userCredential;
   } catch (error) {
-     return error
+     return error.message
   }
 };
 

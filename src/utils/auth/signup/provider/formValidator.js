@@ -12,22 +12,34 @@ export function emailValidator(email) {
   
   export function passwordValidator(password) {
     if (!password) return "Password can't be empty.";
-    if (password.length < 5) return "Password must be at least 5 or more characters long.";
+    if (password.length < 6) return "Password must be at least 6 or more characters long.";
+    return "";
+  }
+  export function matchValidator(pass1,pass2) {
+    if (pass1!==pass2) return "Passwords don't match"
+    return "";
+  }
+
+  export function resumeValidator(resume) {
+    if (!resume) return "Resume  can't be empty.";
+    return "";
+  }
+
+  export function profileValidator(profile) {
+    if (!profile) return "Profile photo can't be empty"
+    return "";
+  }
+
+  export function passwordMatchValidator(password,passwordConfirm) {
+    if (password) return "Password can't be empty.";
+    if (password.length < 6) return "Password must be at least 6 or more characters long.";
     return "";
   }
   
-  export function genderValidator(gender) {
-    if (gender === "Select") return "Gender not selected";
-    return "";
-  }
+  
   
   export function phoneValidator(phone) {
-    if (!phone) return "Phone Number is empty";
+    if (!phone) return "Phone Number can't be empty";
     if (phone.length < 9) return "Phone Number too short";
-  }
-  
-  export function documentNumberValidator(docID) {
-    if (!docID) return "Enter Emirates ID or Passport No";
-    return "";
   }
   
