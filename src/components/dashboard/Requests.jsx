@@ -3,7 +3,7 @@ import RequestCard from '../common/RequestCard/RequestCard'
 import Loader from '../loader/Loader'
 import { Link } from 'react-router-dom'
 import { db } from '../../utils/firebase'
-import { collection, getDocs, getDoc, doc } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 
 const fetchRequests = async () => {
   const requests = []

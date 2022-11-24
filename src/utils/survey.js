@@ -8,8 +8,21 @@ const defaultSurveyJSON = {
       "name": "page1",
       "elements": [
        {
+        "type": "text",
+        "name": "Name",
+        "title": "Please enter your full name",
+        "isRequired": true,
+        "autocomplete": "name",
+        "placeholder": "Enter your full name"
+       }
+      ]
+     },
+     {
+      "name": "page16",
+      "elements": [
+       {
         "type": "checkbox",
-        "name": "I agree to have the diagnosis session and will receive recommendations about my mental health.",
+        "name": "question1",
         "title": "I agree to have the diagnosis session and will receive recommendations about my mental health.",
         "isRequired": true,
         "choices": [
@@ -287,6 +300,6 @@ const defaultSurveyJSON = {
     "startSurveyText": "Start",
     "questionStartIndex": "1",
     "questionsOnPageMode": "questionPerPage"
-   };
+   }
 
 export default defaultSurveyJSON;
