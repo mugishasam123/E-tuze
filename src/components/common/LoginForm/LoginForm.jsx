@@ -49,7 +49,7 @@ const LoginForm = () => {
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
       if(user.role==='provider'){
-       navigate('/provider/dashboard/main')
+       window.location.href='/provider/dashboard/main'
       }
       
       

@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Loader from '../loader/Loader';
 import { useParams } from 'react-router-dom';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../utils/firebase';
-
-
 
 
 const fetchRequest = async (id) => {
@@ -16,7 +14,6 @@ const fetchRequest = async (id) => {
   return null;
 };
 
-
 const handleResolve = () => {
   console.log('resolved');
 };
@@ -24,15 +21,17 @@ const handleResolve = () => {
 const Response = () => {
   const { id } = useParams();
   const [questionaire, setQuestionaire] = useState(null);
+  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchRequest(id).then((data) => {
       setQuestionaire(data);
       setLoading(false);
-      console.log('data', questionaire.Email);
+      setEmail(data['Email']);
     });
   }, []);
+
   return (
     <div>
       <section>
@@ -64,8 +63,12 @@ const Response = () => {
       </section>
       <section className='flex flex-col items-center'>
         <h1 className='text-center text-3xl font-bold text-gray-600 mt-5'>Send Recomendation</h1>
+          <form className='w-[95%]'>
+            <textarea className='w-full h-96 p-5 border border-gray-300 rounded-md' placeholder='Write your recomendation here...' />
+          <input type='submit' className="text-3xl font-semibold tracking-wider px-6 py-4 rounded-xl btn" value='via email' />
+          </form>
         <div className='flex justify-center gap-10 my-10 bg-white drop-shadow-lg py-5 w-[95%]'>
-          <a href={`mailto:/#`} className="text-3xl font-semibold tracking-wider px-6 py-4 rounded-xl btn">Via Email</a>
+          <a href={`mailto:${email}`} className="text-3xl font-semibold tracking-wider px-6 py-4 rounded-xl btn">Via Email</a>
           <button onClick={handleResolve}  className='border border-green-500 text-3xl font-semibold tracking-wider hover:bg-green-100 px-3 py-4 rounded-xl'>Mark As Resolved</button>
         </div>
       </section>
