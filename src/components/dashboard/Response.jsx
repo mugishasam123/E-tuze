@@ -69,7 +69,7 @@ const Response = () => {
     <div>
       <section>
         <h1 className="text-center text-3xl font-bold text-gray-600 mt-5">
-          {id} Diagnosis Q&A
+          {questionaire['Name']} Diagnosis Q&A
         </h1>
         <div className="bg-white drop-shadow-lg m-5 py-5 px-9">
           {loading ? (
