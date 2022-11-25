@@ -1,6 +1,7 @@
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import NavBar from "../Navbar";
 import { useNavigate, Link } from "react-router-dom";
+import video from "../../assets/video.mp4";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -8,18 +9,24 @@ const Hero = () => {
     <div className="py-3  relative">
       <NavBar />
       <div className="space-y-16">
-        <div className=" relative pt-20  h-fit lg:h-screen flex justify-center px-16 ">
-          <div className="space-y-10 py-11 ">
-            <h2 className="text-5xl text-color">
+        <div className=" relative h-screen lg:h-screen">
+          <video className="w-full h-full object-cover" autoPlay loop muted>
+            <source src={video} type="video/mp4" />
+          </video>
+
+          <div className="absolute top-0 left-10 right-10 md:top-[5%] md:bottom-[50%] md:left-[30%] md:right-[25%] z-100 space-y-10 py-11 ">
+            <h2 className="text-5xl text-white opacity-100">
               Feeling better starts with a single message
             </h2>
-            <p className="text-4xl text-gray-800">
+            <p className="text-4xl text-gray-700">
               What type of support are you looking for?
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10">
               <Link to="/questionaire">
                 <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                  <h3 className="text-4xl font-bold text-gray-600">Individual</h3>
+                  <h3 className="text-4xl font-bold text-gray-600">
+                    Individual
+                  </h3>
                   <p className="text-4xl text-gray-800">Therapy for me</p>
                 </div>
               </Link>
@@ -37,8 +44,10 @@ const Hero = () => {
               </Link>
               <Link to="/questionaire">
                 <div className="px-6 py-4 md:py-6 bg-gray-100 rounded-xl border  space-y-4 hover:cursor-pointer hover:bg-gray-200">
-                  <h3 className="text-4xl font-bold text-gray-600">Psychiatry</h3>
-                  <p className="text-4xl text-gray-800">Medication mgmt</p>
+                  <h3 className="text-4xl font-bold text-gray-600">
+                    Psychiatry
+                  </h3>
+                  <p className="text-4xl text-gray-800">Medication management</p>
                 </div>
               </Link>
             </div>
