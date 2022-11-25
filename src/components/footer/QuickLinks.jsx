@@ -17,7 +17,7 @@ const QuickLinks = () => {
           <p className="md:text-xl">
             Email:{" "}
             <a
-              href="mailto:etuze@gmail.com"
+              href="mailto:etuzeplatform@gmail.com"
               className="color-1 hover:opacity-60"
             >
               etuze@gmail.com

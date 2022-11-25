@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LogoNav from '../../components/common/LogoNav/LogoNav';
 import LoginForm from '../../components/common/LoginForm/LoginForm';
 
@@ -14,7 +15,7 @@ const Login = () => {
       <LoginForm />
       <div>
         <span className='text-gray-600 mb-3 block'>Don't have an account? <a href='#' className='color-1 font-bold'>Sign up</a></span>
-        <span className='text-gray-600'>E-Tuze provider? <a href='/provider/login' className='color-1 font-bold'>Login</a></span>
+        <span className='text-gray-600'>E-Tuze provider? <Link to='/provider/login' className='color-1 font-bold'>Login</Link></span>
       </div>
     </main>
     </>

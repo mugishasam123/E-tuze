@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const card = ({bg, title, description, children, border}) => {
+const card = ({bg, title, description, children}) => {
   return (
     <div className={`flex w-[70%] flex-col p-6 ${bg} rounded-xl hover:scale-105`}>
         <div className='flex justify-between'>

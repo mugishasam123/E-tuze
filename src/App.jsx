@@ -1,5 +1,5 @@
 import { Route, Routes,Navigate } from "react-router-dom";
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
 import { auth, db } from "./utils/firebase";
 import { getDoc, doc } from "firebase/firestore";
@@ -20,25 +20,20 @@ import PageNotFound from "./pages/404/PageNotFound";
 import Loader from "./components/loader/Loader";
 
 const App = () => {
-  const [store, setStore] = useState({});
+  const [store] = useState({});
   const [loading, setLoading] = useState(true);
-  const context = createContext();
 
   useEffect(() => {
     store.loading=loading
-  }, [loading])
+  }, [loading]);
   
-
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, async (authUser) => {
       if (authUser) {
-        console.log(authUser);
         const userPromise = await getDoc(doc(db, "providers", authUser.uid));
         const userEmail = authUser.email;
         const userData = { ...userPromise.data(), userEmail };
-        console.log("userData",userData);
-        store.user=userData
-        console.log("store is",store);
+        store.user=userData;
         setLoading(false); 
       } else {
         setLoading(false);
@@ -102,11 +97,7 @@ const App = () => {
         </Routes>
       </div>:<Loader/>
       }
-      
-
-    </div>
-     
-    
+    </div> 
   );
 };
 

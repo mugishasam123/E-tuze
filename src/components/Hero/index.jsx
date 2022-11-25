@@ -102,7 +102,7 @@ const Hero = () => {
             </div>
           </div>
           <button
-            className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn"
+            className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl btn"
             onClick={() => navigate("/get-started")}
           >
             Get Started
