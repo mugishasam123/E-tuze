@@ -5,7 +5,7 @@ const Loader = () => {
   return (
     <>
       <div className="content flex justify-center">
-        <div class="loading bg-2"></div>
+        <div className="loading bg-2"></div>
       </div>
     </>
   )

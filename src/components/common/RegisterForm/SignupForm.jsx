@@ -95,10 +95,9 @@ const SignupForm = () => {
     userData.resumeUrl=resumeUrl
     userData.photoUrl=profileUrl
     try{
-          await createUserWithEmail(userData)
-          console.log("provider registered successfully")
+      await createUserWithEmail(userData)
     }catch(err){
-      console.log("not registered", err)
+      alert("not registered", err)
     }
     
   };
