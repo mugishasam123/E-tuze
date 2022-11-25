@@ -23,7 +23,7 @@ const QuickLinks = () => {
               etuze@gmail.com
             </a>{" "}
           </p>
-          <p className="md:text-xl">Phone: 555-555-5555</p>
+          <p className="md:text-xl">Phone: 250-784-274-110</p>
         </address>
       </div>
 
