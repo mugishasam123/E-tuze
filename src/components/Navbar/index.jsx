@@ -26,9 +26,6 @@ const NavBar = () => {
         onClick={handleMenu }
       />}
      </div>
-     
-      
-      
         <ul className={` ${
           isMenuOpen? "flex flex-col space-y-12" : "hidden items-center space-x-16 md:flex "
         }   `}>

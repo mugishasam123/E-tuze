@@ -24,7 +24,6 @@ const QuestionaireComp = ({ surveyJSON }) => {
 
     try {
       addDoc(collection(db, 'requests'), data)
-      console.log('Document written with ID: ', data)
       navigate('/submitted')
     } catch (error) {
       alert(error.message)
@@ -39,4 +38,4 @@ QuestionaireComp.propTypes = {
   sendDataToServer: PropTypes.func.isRequired,
 }
 
-export default QuestionaireComp
+export default QuestionaireComp;

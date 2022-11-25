@@ -5,7 +5,7 @@ import SideNav from '../../components/dashboard/SideNav';
 
 const ProviderDashboard = ({user}) => {
   return (
-    <div className=''>
+    <div>
       <TopBar name={user.name} photoUrl={user.photoUrl} />
       <SideNav />
       <div className='absolute overflow-scroll w-[100%] md:w-[80%] right-0 w-full h-[91%] bg-gray-100 top-[9%]'>

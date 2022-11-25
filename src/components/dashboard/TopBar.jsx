@@ -18,9 +18,8 @@ const TopBar = ({name, photoUrl}) => {
     try {
       await signOut(auth);
       navigate('/provider/login')
-      console.log("sign out successfully");
     } catch (error) {
-      console.log("sign out error", error.message);
+      alert("sign out error", error.message);
     }
   };
 
@@ -38,4 +37,4 @@ const TopBar = ({name, photoUrl}) => {
   )
 }
 
-export default TopBar
+export default TopBar;

@@ -23,7 +23,7 @@ const GetStarted = () => {
         >
           <svg
             role="img"
-            aria-label="Imperfect circle with a chat icon"
+            ariaLabel="Imperfect circle with a chat icon"
             width="40"
             viewBox="0 0 47 47"
           >
@@ -59,7 +59,7 @@ const GetStarted = () => {
         >
           <svg
             role="img"
-            aria-label="Imperfect circle with two people"
+            ariaLabel="Imperfect circle with two people"
             width="40"
             viewBox="0 0 47 47"
           >
@@ -109,7 +109,7 @@ const GetStarted = () => {
         >
           <svg
             role="img"
-            aria-label="Imperfect circle with a chat icon"
+            ariaLabel="Imperfect circle with a chat icon"
             width="40"
             viewBox="0 0 47 47"
           >
@@ -145,7 +145,7 @@ const GetStarted = () => {
         >
           <svg
             role="img"
-            aria-label="Imperfect circle with rx icon"
+            ariaLabel="Imperfect circle with rx icon"
             width="40"
             viewBox="0 0 47 47"
           >

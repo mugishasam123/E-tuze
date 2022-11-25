@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../assets/icon.png'
 import {
   MdSpaceDashboard,
@@ -12,9 +12,9 @@ const SideNav = () => {
   return (
     <aside className="bg-2 w-[20%] absolute top-0 left-[-100%] md:left-0 h-full text-white flex flex-col items-center p-5 gap-20">
       <div className="logo">
-        <a href="/">
+        <Link to="/">
           <img src={Logo} alt="logo" className="w-[35%] mx-auto" />
-        </a>
+        </Link>
       </div>
       <div className="menu mt-20 self-start">
         <ul>
@@ -33,7 +33,7 @@ const SideNav = () => {
               className="flex items-center gap-5 text-4xl hover:text-gray-200"
             >
               <MdPendingActions className="text-3xl inline" />
-              Client's Requests
+              Clients Requests
             </NavLink>
           </li>
           <li className="mb-7">
@@ -42,7 +42,7 @@ const SideNav = () => {
               className="flex items-center gap-5 text-4xl hover:text-gray-200"
             >
               <MdMessage className="text-3xl inline" />
-              Client's Messages
+              Clients Messages
             </NavLink>
           </li>
           <li className="mb-7">
@@ -60,4 +60,4 @@ const SideNav = () => {
   )
 }
 
-export default SideNav
+export default SideNav;
