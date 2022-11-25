@@ -10,15 +10,14 @@ const Hero = () => {
       <NavBar />
       <div className="space-y-16">
         <div className=" relative h-screen lg:h-screen">
-          <video className="w-full h-full object-cover" autoPlay loop muted>
+          <video className="w-full h-full object-cover overlay" autoPlay loop muted>
             <source src={video} type="video/mp4" />
           </video>
-
           <div className="absolute top-0 left-10 right-10 md:top-[5%] md:bottom-[50%] md:left-[30%] md:right-[25%] z-100 space-y-10 py-11 ">
-            <h2 className="text-5xl text-white opacity-100">
+            <h2 className="text-5xl text-white text-center opacity-100 font-bold">
               Feeling better starts with a single message
             </h2>
-            <p className="text-4xl text-gray-700">
+            <p className="text-4xl text-gray-200">
               What type of support are you looking for?
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-10">

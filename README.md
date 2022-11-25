@@ -6,7 +6,7 @@
   <br/>
 
   <h3><b>E-Tuze Platform</b></h3>
-  <em>"Mental Health Services Everywhere Anytime"</em>
+  <em>"Mental health at your fingertips"</em>
 
 </div>
 

@@ -1,8 +1,8 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 
 import { MdMenu,MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/hom.png";
+import logo from "../../assets/icon.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

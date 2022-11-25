@@ -51,7 +51,6 @@ const Response = () => {
     if (result) {
       setSent('Email sent successfully')
       setResponse({ ...response, message: '' })
-      console.log(result)
     } else {
       setSent('Email failed to send')
     }
