@@ -121,7 +121,7 @@ const template = (recipientEmail, message) => ({
       <tr>
         <td style="padding-right: 0px;padding-left: 0px;" align="center">
           
-          <img align="center" border="0" src="https://assets.unlayer.com/stock-templates1669293442199-logo-croped.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 480px;" width="480"/>
+          <img align="center" border="0" src="https://static1.squarespace.com/static/638088e8968db92e59cce913/t/63808b08ae61550001b0c295/1669368585151/logo-croped.png" alt="" title="" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 480px;" width="480"/>
           
         </td>
       </tr>
@@ -385,7 +385,7 @@ const template = (recipientEmail, message) => ({
     <p style="font-size: 14px; line-height: 140%;"> </p>
     <p style="font-size: 14px; line-height: 140%;">Best regards,</p>
     <p style="font-size: 14px; line-height: 140%;"><strong>E-Tuze</strong></p>
-    <p style="font-size: 14px; line-height: 140%;"><em>Mental Health services everywhere anytime</em></p>
+    <p style="font-size: 14px; line-height: 140%;"><em>Mental health at your fingertips</em></p>
       </div>
     
           </td>
