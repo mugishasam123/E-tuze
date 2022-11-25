@@ -150,7 +150,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/mugishasam123/E-tuze/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
