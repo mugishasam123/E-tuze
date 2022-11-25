@@ -7,13 +7,33 @@ import './slide-show.css';
 
 const therapists = [
   {
-    name: 'Dr. John Doe',
-    image: 'https://randomuser.me/api/portraits/men/1.jpg',
+    name: 'Dr. Christine',
+    image: 'https://randomuser.me/api/portraits/women/47.jpg',
     description: 'Self-esteem, Depression, Anxiety, Relationships',
   },
   {
-    name: 'Dr. Jane Doe',
-    image: 'https://randomuser.me/api/portraits/men/2.jpg',
+    name: 'Brian Smith',
+    image: 'https://randomuser.me/api/portraits/men/30.jpg',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
+  },
+  {
+    name: 'Dr. John Doe',
+    image: 'https://randomuser.me/api/portraits/men/53.jpg',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
+  },
+  {
+    name: 'Dr. Frank Adams',
+    image: 'https://randomuser.me/api/portraits/men/83.jpg',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
+  },
+  {
+    name: 'Dr. Martina',
+    image: 'https://randomuser.me/api/portraits/women/30.jpg',
+    description: 'Self-esteem, Depression, Anxiety, Relationships',
+  },
+  {
+    name: 'Dr. Mary',
+    image: 'https://randomuser.me/api/portraits/women/76.jpg',
     description: 'Self-esteem, Depression, Anxiety, Relationships',
   },
 ];
