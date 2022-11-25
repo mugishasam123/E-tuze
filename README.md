@@ -2,10 +2,11 @@
 
 <div align="center">
 
-  <img src="./src/assets/logo-croped.png" alt="logo" width="140"  height="auto" />
+  <img src="./src/assets/icon.png" alt="logo" width="140"  height="auto" />
   <br/>
 
   <h3><b>E-Tuze Platform</b></h3>
+  <em>"Mental Health Services Everywhere Anytime"</em>
 
 </div>
 
@@ -93,8 +94,8 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  cd your-folder
+  git clone git@github.com:myaccount/E-tuze.git
 ```
 
 ### Install
@@ -102,7 +103,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd my-project
+  cd E-tuze
   npm install
 ```
 
