@@ -95,7 +95,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd your-folder
-  git clone git@github.com:myaccount/E-tuze.git
+  git clone https://github.com/mugishasam123/E-tuze.git
 ```
 
 ### Install
@@ -123,15 +123,15 @@ To run the project, execute the following command:
 
 👤 **Bertrand Mutangana Ishimwe**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@BertrandConxy](https://github.com/BertrandConxy)
+- Twitter: [@Bconxy](https://twitter.com/BertrandMutanga)
+- LinkedIn: [Bertrand Mutangana Ishimwe](https://www.linkedin.com/in/bertrandmutangana)
 
 👤 **Mugisha Samuel**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@mugishasamuel](https://github.com/mugishasam123)
+- Twitter: [@mugishsamuel](https://twitter.com/mugishasamuel42/)
+- LinkedIn: [mugishasamuel](https://www.linkedin.com/in/mugisha-samuel-55a905208/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
