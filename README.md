@@ -38,7 +38,7 @@
 
 # 📖 [E-Tuze Platform] <a name="about-project"></a>
 
-> This is the online platform that intends to provide mental health services and information about mental health to everyone in very easy and accessible manner.
+> This is an online platform that intends to provide mental health services and information to everyone in a very easy and accessible manner.
 
 ## 🛠 Built With <a name="built-with"></a>
 
