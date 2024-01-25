@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./signup.css";
+import toast, { Toaster } from "react-hot-toast";
 import createUserWithEmail from "../../../utils/auth/signup/provider/registerUser";
 import {
   emailValidator,
@@ -13,6 +14,12 @@ import {
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../../utils/firebase";
 
+export const getErrorMsg = (error) => {
+  // if (error) {
+    return error;
+  // }
+  // return "you entered a wrong password!"
+};
 const SignupForm = () => {
   const [userData, setUserData] = useState({});
   const [emailErr, setEmailErr] = useState(null);
@@ -52,6 +59,7 @@ const SignupForm = () => {
         if (e.target.name === "resume") return setResumeProgress(progress);
       },
       (error) => {
+        console.log(error)
         alert(error);
       },
       () => {
@@ -95,9 +103,17 @@ const SignupForm = () => {
     userData.resumeUrl=resumeUrl
     userData.photoUrl=profileUrl
     try{
-      await createUserWithEmail(userData)
-    }catch(err){
-      alert("not registered", err)
+      await toast.promise(
+        createUserWithEmail(userData),
+         {
+           loading: "creating...",
+           success: <b>user created Successfully!</b>,
+           error:(error)=><b>{getErrorMsg(error)}</b>
+         }
+       ); 
+    }catch(error){
+      // alert("not registered", err)
+      console.log(error)
     }
     
   };
@@ -386,6 +402,10 @@ const SignupForm = () => {
           Register
         </button>
       </form>
+      <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
     </div>
   );
 };
