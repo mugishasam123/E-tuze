@@ -20,6 +20,8 @@ const QuestionaireComp = ({ surveyJSON }) => {
     const data = {
       ...sender.data,
       date: new Date().toLocaleString(),
+      responseStatus:false,
+      providerEmail:null
     }
 
     try {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import RequestCard from '../common/RequestCard/RequestCard'
-import Loader from '../loader/Loader'
 import { Link } from 'react-router-dom'
 import { db } from '../../utils/firebase'
 import { collection, getDocs } from 'firebase/firestore'
+import { ClipLoader } from 'react-spinners'
 
 const fetchRequests = async () => {
   const requests = []
@@ -20,6 +20,7 @@ const Requests = () => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     fetchRequests().then((data) => {
+      console.log("these are data ==",data);
       setRequests(data)
       setLoading(false)
     })
@@ -34,7 +35,7 @@ const Requests = () => {
         <div className="p-5 mt-1">
           {loading ? (
             <div className="flex flex-col items-center justify-center">
-              <Loader />
+              <ClipLoader color='#36d7b7'/>
             </div>
           ) : (
             requests.map((request) => (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./signup.css";
 import toast, { Toaster } from "react-hot-toast";
 import createUserWithEmail from "../../../utils/auth/signup/provider/registerUser";
+import { BeatLoader } from "react-spinners";
 import {
   emailValidator,
   nameValidator,
@@ -15,9 +16,7 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../../utils/firebase";
 
 export const getErrorMsg = (error) => {
-  // if (error) {
-    return error;
-  // }
+    console.log(error.message);
   // return "you entered a wrong password!"
 };
 const SignupForm = () => {
@@ -35,6 +34,7 @@ const SignupForm = () => {
   const [profileName, setProfileName] = useState(null);
   const [profileUrl, setProfileUrl] = useState(null);
   const [profileProgress, setProfileProgress] = useState(0);
+  const [loading,setLoading]=useState(false);
 
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -103,6 +103,7 @@ const SignupForm = () => {
     userData.resumeUrl=resumeUrl
     userData.photoUrl=profileUrl
     try{
+      setLoading(true)
       await toast.promise(
         createUserWithEmail(userData),
          {
@@ -111,9 +112,13 @@ const SignupForm = () => {
            error:(error)=><b>{getErrorMsg(error)}</b>
          }
        ); 
+       window.location.href='/client/login'
     }catch(error){
-      // alert("not registered", err)
       console.log(error)
+      toast.error(error?.message);
+    }
+    finally{
+      setLoading(false);
     }
     
   };
@@ -399,7 +404,9 @@ const SignupForm = () => {
           onClick={handleSubmit}
           className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn"
         >
-          Register
+          {
+            loading ? <p className="my-auto"> <BeatLoader color="#fff" /></p> : <p>Register</p>
+}
         </button>
       </form>
       <Toaster
