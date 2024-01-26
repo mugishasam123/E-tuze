@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Loader from '../loader/Loader'
 import { useParams } from 'react-router-dom'
 import { getDoc, doc,updateDoc } from 'firebase/firestore'
 import { db,auth } from '../../utils/firebase'
 import template from '../../utils/emailTemplate'
 import { ClipLoader } from 'react-spinners'
+import {BeatLoader} from 'react-spinners'
 
 const REACT_APP_URI_SENDMAIL =
   'https://us-central1-e-tuze.cloudfunctions.net/sendMail'
@@ -12,6 +12,7 @@ const REACT_APP_URI_SENDMAIL =
 const sendMail = async (data) => {
   const response = await fetch(REACT_APP_URI_SENDMAIL, {
     method: 'POST',
+    mode:'no-cors',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -34,7 +35,9 @@ const Response = () => {
   const { id } = useParams()
   const [questionaire, setQuestionaire] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [isLoading,setIsLoading]=useState(false)
   const userEmail=auth.currentUser.email;
+  const requestRef = doc(db, 'requests', id);
 
   const [response, setResponse] = useState({
     recipientEmail: '',
@@ -50,20 +53,33 @@ const Response = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    const result = await sendMail(template(response.recipientEmail, response.message))
+    console.log("response==",response.recipientEmail)
+    console.log("response==",response.message)
+    try{
+    const result = sendMail(template(response?.recipientEmail, response.message))
 
     if (result) {
-      setResponse({ ...response, message: '' })
+      setIsLoading(true);
       setSent('Email sent successfully')
+      setResponse({ ...response, message: '' })
       await updateDoc(requestRef,{
       responseStatus:true,
       providerEmail:userEmail
       }
       )
+      window.location.href='/provider/dashboard/requests'
       setFormSubmitted(true)
     } else {
       setSent('Email failed to send')
     }
+    }
+    catch(error){
+      console.log(error)
+    }
+    finally{
+      setIsLoading(false);
+    }
+
   }
 
   useEffect(() => {
@@ -120,7 +136,7 @@ const Response = () => {
         </div>
       </section>
       <section className="flex flex-col items-center">
-          {!formSubmitted ? (
+          {!formSubmitted && !questionaire?.responseStatus ?(
             <>
         <h1 className="text-center text-3xl font-bold text-gray-600 mt-5">
           Send Recomendation
@@ -134,24 +150,19 @@ const Response = () => {
             placeholder="Write your recomendation here..."
             onChange={handleChange}
           />
-          <input
+          <button
             type="submit"
             className="text-3xl font-semibold tracking-wider px-6 py-4 mt-3 rounded-xl btn cursor-pointer"
-            value="Send"
-          />
+          >{isLoading ? <p className="my-auto"> <BeatLoader color="#fff" /></p> : <p className=''>Send</p> }</button>
         </form>
-        </>
-        ):(
+        </>)
+        :(
         <p
-          className={`text-3xl -translate-y-16 font-semibold px-6 ${
-            sent === 'Email sent successfully'
-              ? 'text-green-600'
-              : 'text-red-500'
-          }`}
+          className={`text-3xl -translate-y-16 font-semibold px-12 ${sent ?"text-[#36d7b7]" :"text-red-500"} `}
         >
-          {sent}
+        {questionaire?.responseStatus ? 'Already responded. Thank you!' : sent}
         </p>
-        )}
+         )}  
       </section>
     </div>
   )

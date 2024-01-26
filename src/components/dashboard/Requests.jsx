@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import RequestCard from '../common/RequestCard/RequestCard'
 import { Link } from 'react-router-dom'
-import { db } from '../../utils/firebase'
+import { db,auth } from '../../utils/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { ClipLoader } from 'react-spinners'
 
 const fetchRequests = async () => {
   const requests = []
   const requestsRef = collection(db, 'requests')
+  const provider=auth.currentUser.email
   const requestsSnapshot = await getDocs(requestsRef)
   requestsSnapshot.forEach((doc) => {
-    requests.push({ ...doc.data(), id: doc.id })
-  })
-  return requests
+    const request = { ...doc.data(), id: doc.id };
+
+    if (!request.responseStatus || (request.responseStatus && request.providerEmail === provider)) {
+      requests.push(request);
+    }
+  });
+
+  return requests;
 }
 
 const Requests = () => {
@@ -20,7 +26,6 @@ const Requests = () => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     fetchRequests().then((data) => {
-      console.log("these are data ==",data);
       setRequests(data)
       setLoading(false)
     })

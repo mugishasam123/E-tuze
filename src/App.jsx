@@ -17,7 +17,6 @@ import GetStarted from "./pages/getStarted/index";
 import Questionaire from "./pages/questionaire/index";
 import Thank from "./pages/Thank/Thank";
 import PageNotFound from "./pages/404/PageNotFound";
-import Loader from "./components/loader/Loader";
 import { DotLoader } from "react-spinners";
 
 const App = () => {
