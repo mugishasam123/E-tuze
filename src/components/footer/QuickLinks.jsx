@@ -20,7 +20,7 @@ const QuickLinks = () => {
               href="mailto:etuzeplatform@gmail.com"
               className="color-1 hover:opacity-60"
             >
-              etuze@gmail.com
+etuzeplatform@gmail.com
             </a>{" "}
           </p>
           <p className="md:text-xl">Phone: 250-784-274-110</p>
