@@ -11,7 +11,7 @@ const REACT_APP_URI_SENDMAIL =
 
 const sendMail = async (data) => {
   const response = await fetch(REACT_APP_URI_SENDMAIL, {
-    method: "POST",
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
     },
@@ -50,12 +50,10 @@ const Response = () => {
     setResponse({ ...response, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const result = sendMail(
-        template(response?.recipientEmail, response.message)
-      );
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    try{
+    const result = sendMail(template(response?.recipientEmail, response.message))
 
       if (result) {
         setIsLoading(true);
@@ -79,11 +77,11 @@ const Response = () => {
 
   useEffect(() => {
     fetchRequest(id).then((data) => {
-      setQuestionaire(data);
-      setLoading(false);
-      setResponse({ ...response, recipientEmail: data["Email"] });
-    });
-  }, [id]);
+      setQuestionaire(data)
+      setLoading(false)
+      setResponse({ ...response, recipientEmail: data['Email'] })
+    })
+  }, [id])
 
   return (
     <div>
