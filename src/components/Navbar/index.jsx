@@ -7,7 +7,7 @@ import logo from "../../assets/icon.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const user=auth.currentUser.email;
+  const user=auth.currentUser;
   const navigate = useNavigate();
 
   const handleMenu=()=>{
