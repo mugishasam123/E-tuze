@@ -14,7 +14,7 @@ const Login = () => {
       <p className='md:text-3xl text-gray-500 w-[60%] md:w-[30%] text-center'>Log in to continue your therapy journey toward a happier, healthier you.</p>
       <LoginForm />
       <div>
-        <span className='text-gray-600 mb-3 block'>Don't have an account? <a href='/provider/register' className='color-1 font-bold'>Sign up</a></span>
+        <span className='text-gray-600 mb-3 block'>Don't have an account? <a href='#' className='color-1 font-bold'>Sign up</a></span>
         <span className='text-gray-600'>E-Tuze provider? <Link to='/provider/login' className='color-1 font-bold'>Login</Link></span>
       </div>
     </main>

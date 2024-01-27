@@ -17,7 +17,7 @@ import GetStarted from "./pages/getStarted/index";
 import Questionaire from "./pages/questionaire/index";
 import Thank from "./pages/Thank/Thank";
 import PageNotFound from "./pages/404/PageNotFound";
-import { DotLoader } from "react-spinners";
+import Loader from "./components/loader/Loader";
 
 const App = () => {
   const [store] = useState({});
@@ -95,7 +95,7 @@ const App = () => {
           <Route path="/submitted" element={<Thank />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </div>:<div className="flex justify-center items-center w-full h-screen"><DotLoader color="#36d7b7"/></div>
+      </div>:<Loader/>
       }
     </div> 
   );

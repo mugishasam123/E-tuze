@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import { BeatLoader } from "react-spinners";
 import {
   emailValidator,
   passwordValidator,
@@ -9,20 +7,12 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../../utils/firebase";
 import { getDoc, doc } from "firebase/firestore";
 
-export const getErrorMsg = (error) => {
-  if (error.message==="Firebase: Error (auth/user-not-found).") {
-    return "user not found!";
-  }
-  return "you entered a wrong password!"
-};
-
 const LoginForm = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
     remember: "off",
   });
-  const [loading, setIsLoading] = useState(false);
   const [emailErr, setEmailErr] = useState(null);
   const [passwordErr, setPasswordErr] = useState(null);
   const [authErr, setAuthErr] = useState(null);
@@ -44,19 +34,11 @@ const LoginForm = () => {
     setPasswordErr("");
 
     try {
-      setIsLoading(true);
-      const userCredential = await toast.promise(
-        signInWithEmailAndPassword(
-          auth,
-          credentials.email,
-          credentials.password
-        ),
-         {
-           loading: 'Loging in...',
-           success: <b>logged in Successfully!</b>,
-           error: (error) => <b>{getErrorMsg(error)}</b>
-         }
-       );
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
 
       setAuthErr("");
       const userPromise = await getDoc(
@@ -72,12 +54,9 @@ const LoginForm = () => {
     } catch (error) {
       setAuthErr(error.message)
       const message=error.message
-      // if(message=="Firebase: Error (auth/user-not-found).") {
-      //   console.log("You entered Wrong Email and password");
-      // }  
-    }
-    finally{
-      setIsLoading(false);
+      if(message=="Firebase: Error (auth/user-not-found)") {
+        setAuthErr("You entered Wrong Email and password")
+      }  
     }
   };
   return (
@@ -86,6 +65,7 @@ const LoginForm = () => {
         className="flex flex-col items-start justify-start w-[100%]"
         onSubmit={handleSubmit}
       >
+        {authErr && <span className="text-red-500">{authErr}</span>}
         <label htmlFor="email" className="text-gray-500">
           Email
         </label>
@@ -130,15 +110,9 @@ const LoginForm = () => {
           onClick={handleSubmit}
           className="text-3xl font-semibold tracking-wider px-16 py-4 rounded-xl  btn"
         >
-          {loading ? <p className="my-auto"> <BeatLoader color="#fff" /></p>:
-          <p>Login</p>
-  }
+          Login
         </button>
       </form>
-      <Toaster
-  position="top-right"
-  reverseOrder={false}
-/>
     </div>
   );
 };
