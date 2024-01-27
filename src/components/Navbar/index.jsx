@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { auth } from "../../utils/firebase";
 
 import { MdMenu,MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import logo from "../../assets/icon.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const user=auth.currentUser;
   const navigate = useNavigate();
 
   const handleMenu=()=>{
@@ -48,12 +50,15 @@ const NavBar = () => {
           </li>
 
           <li onClick={()=>setIsMenuOpen(false)}>
+            {user ? <></> : (
             <button
               className="text-3xl font-semibold tracking-wider text-color"
               onClick={() => navigate("/client/login")}
             >
               Log In
-            </button>
+            </button>)
+
+}
           </li>
 
           <li onClick={()=>setIsMenuOpen(false)}>

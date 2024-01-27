@@ -45,15 +45,19 @@ const Requests = () => {
             <div className="flex flex-col items-center justify-center">
               <ClipLoader color="#36d7b7" />
             </div>
-          ) : (requests.length>0?( requests.map((request) => (
-            <Link
-              to={`/provider/dashboard/requests/${request.id}`}
-              key={request.id}
-            >
-              <RequestCard key={request.id} request={request} />
-            </Link>
-          ))):(<div>No Client's requests are available for the moment, refresh the page to check.</div>)
-           
+          ) : requests.length > 0 ? (
+            requests.map((request) => (
+              <Link
+                to={`/provider/dashboard/requests/${request.id}`}
+                key={request.id}
+              >
+                <RequestCard key={request.id} request={request} />
+              </Link>
+            ))
+          ):(
+            <p className="text-[gray] text-center">
+              No Requests Available
+            </p>
           )}
         </div>
       </main>
