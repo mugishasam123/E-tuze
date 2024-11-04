@@ -6,13 +6,13 @@ import {getStorage} from 'firebase/storage'
 import {getAuth} from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyD-T4N2SreILDblgtrA9UfVRcb_8QxuXR8',
-  authDomain: 'e-tuze.firebaseapp.com',
-  projectId: 'e-tuze',
-  storageBucket: 'e-tuze.appspot.com',
-  messagingSenderId: '918994340991',
-  appId: '1:918994340991:web:97e6b8de4d11dad19fc34a',
-  measurementId: 'G-Q7V0R78VG4',
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
+  measurementId: import.meta.env.VITE_MEASUREMENTID,
 };
 
 // Initialize Firebase
