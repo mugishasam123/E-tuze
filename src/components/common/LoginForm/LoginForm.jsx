@@ -64,8 +64,13 @@ const LoginForm = () => {
       );
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
-      if(user.role==='provider'){
+      console.log("testing1",user)
+      if(user.userEmail){
+        console.log("testing2")
+
        window.location.href='/provider/dashboard/main'
+       console.log("testing3")
+
       }
       
       

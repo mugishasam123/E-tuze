@@ -51,7 +51,7 @@ const App = () => {
           <Route path="/client/login" element={<Login />} />
           <Route path="/provider/login" element={<ProviderLogin />} />
           <Route path="/provider/register" element={<Register />} />
-          {store?.user?.role === "provider" && (
+          {store?.user  && (
             <Route path="/provider/dashboard" element={<ProviderDashboard user={store.user}/>}>
               <Route path="/provider/dashboard/main" element={<Main />} />
               <Route
@@ -73,7 +73,7 @@ const App = () => {
             </Route>
           )}
         
-        {!store?.user?.role && (
+        {!store?.user && (
             <Route path="/provider/dashboard" element={<Navigate to="/provider/login" />}>
               <Route path="/provider/dashboard/main" element={<Navigate to="/provider/login" />} />
               <Route
