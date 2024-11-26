@@ -7,7 +7,7 @@ import 'survey-core/defaultV2.min.css'
 import { StylesManager, Model } from 'survey-core'
 import { Survey } from 'survey-react-ui'
 import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../../utils/firebase'
+import { auth, db } from '../../utils/firebase'
 import './questionaire.css'
 
 StylesManager.applyTheme('defaultV2')
@@ -19,6 +19,7 @@ const QuestionaireComp = ({ surveyJSON }) => {
   survey.onComplete.add((sender) => {
     const data = {
       ...sender.data,
+      userID: auth.currentUser.uid,
       date: new Date().toLocaleString(),
       responseStatus:false,
       providerEmail:null
@@ -26,7 +27,7 @@ const QuestionaireComp = ({ surveyJSON }) => {
 
     try {
       addDoc(collection(db, 'requests'), data)
-      navigate('/submitted')
+      navigate('/client/dashboard/submitted')
     } catch (error) {
       alert(error.message)
     }
