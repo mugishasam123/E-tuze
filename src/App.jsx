@@ -48,6 +48,7 @@ const App = () => {
   return (
     <div>
       {
+
         !loading ? <div className="App">
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -59,6 +60,50 @@ const App = () => {
               <Route path="requests/:id" element={<ClientRequestDetails />} />
               <Route path="questionaire" element={<Questionaire />} />
               <Route path="submitted" element={<Thank />} />
+
+        !loading? <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/client/login" element={<Login />} />
+          <Route path="/provider/login" element={<ProviderLogin />} />
+          <Route path="/provider/register" element={<Register />} />
+          {store?.user  && (
+            <Route path="/provider/dashboard" element={<ProviderDashboard user={store.user}/>}>
+              <Route path="/provider/dashboard/main" element={<Main />} />
+              <Route
+                path="/provider/dashboard/requests"
+                element={<Requests />}
+              />
+              <Route
+                path="/provider/dashboard/requests/:id"
+                element={<Response />}
+              />
+              <Route
+                path="/provider/dashboard/messages"
+                element={<Messages />}
+              />
+              <Route
+                path="/provider/dashboard/settings"
+                element={<Settings />}
+              />
+            </Route>
+          )}
+        
+        {!store?.user && (
+            <Route path="/provider/dashboard" element={<Navigate to="/provider/login" />}>
+              <Route path="/provider/dashboard/main" element={<Navigate to="/provider/login" />} />
+              <Route
+                path="/provider/dashboard/requests"
+                element={<Navigate to="/provider/login" />}
+              />
+              <Route
+                path="/provider/dashboard/messages"
+                element={<Navigate to="/provider/login" />}
+              />
+              <Route
+                path="/provider/dashboard/settings"
+                element={<Navigate to="/provider/login" />}
+              />
             </Route>
 
             {store?.user?.role === "provider" && (

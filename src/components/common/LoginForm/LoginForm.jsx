@@ -72,6 +72,7 @@ const LoginForm = () => {
         }
       );
 
+
       const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
       const userData = { ...userDoc.data(), userEmail: userCredential.user.email };
 
@@ -80,6 +81,20 @@ const LoginForm = () => {
       const redirectPath = nextPath ? `${basePath}/${nextPath}` : basePath;
 
       navigate(redirectPath);
+
+      const userEmail = userCredential.user.email;
+      const user = { ...userPromise.data(), userEmail };
+      console.log("testing1",user)
+      if(user.userEmail){
+        console.log("testing2")
+
+       window.location.href='/provider/dashboard/main'
+       console.log("testing3")
+
+      }
+      
+      
+
     } catch (error) {
       console.error(error);
     } finally {
