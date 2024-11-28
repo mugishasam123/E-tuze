@@ -41,9 +41,9 @@ const Messages = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col justify-center items-center h-[80vh] ">
       {/* Messages Display */}
-      <div className="flex-grow  p-4 bg-gray-100">
+      <div className="flex-grow  p-4 bg-gray-100 mt-20">
         {messages.map((msg) => (
           <div
             key={msg.id}
