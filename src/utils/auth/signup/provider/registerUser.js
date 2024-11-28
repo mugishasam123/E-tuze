@@ -11,12 +11,13 @@ const createUserWithEmail = async (userData) => {
       userData.password
     );
 
-    return setDoc(doc(db, "providers", cred.user.uid), {
+    return setDoc(doc(db, "users", cred.user.uid), {
       resumeUrl: userData.resumeUrl,
       photoUrl: userData.photoUrl,
       name: userData.name,
       phoneNumber: userData.phoneNumber,
-      role: "provider",
+      email: userData.email,
+      role: userData.userType || "provider",
     });
   } catch (error) {
     return error.message;
