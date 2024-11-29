@@ -80,7 +80,7 @@ const LoginForm = () => {
       const basePath = userData.role === 'provider' ? '/provider/dashboard/main' : '/client/dashboard';
       const redirectPath = nextPath ? `${basePath}/${nextPath}` : basePath;
 
-      navigate(redirectPath);
+      window.Location.href = redirectPath;
 
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
