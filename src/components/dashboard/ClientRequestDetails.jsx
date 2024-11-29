@@ -4,7 +4,7 @@ import { getDoc, doc, collection, query, where, getDocs } from "firebase/firesto
 import { db } from "../../utils/firebase";
 import { ClipLoader } from "react-spinners";
 
-const excludedFields = ['Name', 'userID', 'date', 'email', 'Email', 'responseStatus', 'providerEmail', 'response'];
+const excludedFields = ['Name', 'userID', 'date', 'email', 'Email', 'responseStatus', 'providerEmail', 'response', 'chatMessages'];
 
 const RequestDetails = () => {
     const { id } = useParams();
@@ -74,7 +74,7 @@ const RequestDetails = () => {
                                         {Array.isArray(answer) ? (
                                             <ul className="list-disc list-inside">
                                                 {answer.map((item, i) => (
-                                                    <li key={i}>{item}</li>
+                                                    <li key={i}>{item.toString()}</li>
                                                 ))}
                                             </ul>
                                         ) : (
@@ -91,7 +91,7 @@ const RequestDetails = () => {
                     <div>
                         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Provider's Response</h2>
                         <div className="bg-gray-50 p-4 rounded">
-                            <p className="text-gray-700 whitespace-pre-wrap">{data.response}</p>
+                            <p className="text-gray-700 whitespace-pre-wrap">{data.response.toString()}</p>
                         </div>
                     </div>
                 )}
