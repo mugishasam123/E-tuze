@@ -1,11 +1,11 @@
-import { Route, Routes,Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
 import { auth, db } from "./utils/firebase";
 import { getDoc, doc } from "firebase/firestore";
 import Home from "./pages/home/Home";
 import Login from "./pages/client/Login";
-import ProviderLogin from "./pages/provider/Login";
+import ProviderLogin from "./pages/provider/Login"
 import Register from "./pages/provider/Register";
 import ProviderDashboard from "./pages/provider/dashboard";
 import Main from "./components/dashboard/Main";
@@ -24,17 +24,17 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    store.loading=loading
+    store.loading = loading
   }, [loading]);
-  
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, async (authUser) => {
       if (authUser) {
         const userPromise = await getDoc(doc(db, "providers", authUser.uid));
         const userEmail = authUser.email;
         const userData = { ...userPromise.data(), userEmail };
-        store.user=userData;
-        setLoading(false); 
+        store.user = userData;
+        setLoading(false);
       } else {
         setLoading(false);
       }
@@ -45,59 +45,59 @@ const App = () => {
   return (
     <div>
       {
-        !loading? <div className="App">
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/client/login" element={<Login />} />
-          <Route path="/provider/login" element={<ProviderLogin />} />
-          <Route path="/provider/register" element={<Register />} />
-          {store?.user  && (
-            <Route path="/provider/dashboard" element={<ProviderDashboard user={store.user}/>}>
-              <Route path="/provider/dashboard/main" element={<Main />} />
-              <Route
-                path="/provider/dashboard/requests"
-                element={<Requests />}
-              />
-              <Route
-                path="/provider/dashboard/requests/:id"
-                element={<Response />}
-              />
-              <Route
-                path="/provider/dashboard/messages"
-                element={<Messages />}
-              />
-              <Route
-                path="/provider/dashboard/settings"
-                element={<Settings />}
-              />
-            </Route>
-          )}
-        
-        {!store?.user && (
-            <Route path="/provider/dashboard" element={<Navigate to="/provider/login" />}>
-              <Route path="/provider/dashboard/main" element={<Navigate to="/provider/login" />} />
-              <Route
-                path="/provider/dashboard/requests"
-                element={<Navigate to="/provider/login" />}
-              />
-              <Route
-                path="/provider/dashboard/messages"
-                element={<Navigate to="/provider/login" />}
-              />
-              <Route
-                path="/provider/dashboard/settings"
-                element={<Navigate to="/provider/login" />}
-              />
-            </Route>
-          )}
-          <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/questionaire" element={<Questionaire />} />
-          <Route path="/submitted" element={<Thank />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </div>:<div className="flex justify-center items-center w-full h-screen"><DotLoader color="#36d7b7"/></div>
+        !loading ? <div className="App">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/client/login" element={<Login />} />
+            <Route path="/login" element={<ProviderLogin />} />
+            <Route path="/register" element={<Register />} />
+            {store?.user && (
+              <Route path="/provider/dashboard" element={<ProviderDashboard user={store.user} />}>
+                <Route path="/provider/dashboard/main" element={<Main />} />
+                <Route
+                  path="/provider/dashboard/requests"
+                  element={<Requests />}
+                />
+                <Route
+                  path="/provider/dashboard/requests/:id"
+                  element={<Response />}
+                />
+                <Route
+                  path="/provider/dashboard/messages"
+                  element={<Messages />}
+                />
+                <Route
+                  path="/provider/dashboard/settings"
+                  element={<Settings />}
+                />
+              </Route>
+            )}
+
+            {!store?.user && (
+              <Route path="/provider/dashboard" element={<Navigate to="/login" />}>
+                <Route path="/provider/dashboard/main" element={<Navigate to="/login" />} />
+                <Route
+                  path="/provider/dashboard/requests"
+                  element={<Navigate to="/login" />}
+                />
+                <Route
+                  path="/provider/dashboard/messages"
+                  element={<Navigate to="/login" />}
+                />
+                <Route
+                  path="/provider/dashboard/settings"
+                  element={<Navigate to="/login" />}
+                />
+              </Route>
+            )}
+            <Route path="/get-started" element={<GetStarted />} />
+            <Route path="/questionaire" element={<Questionaire />} />
+            <Route path="/submitted" element={<Thank />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div> : <div className="flex justify-center items-center w-full h-screen"><DotLoader color="#36d7b7" /></div>
       }
-    </div> 
+    </div>
   );
 };
 
