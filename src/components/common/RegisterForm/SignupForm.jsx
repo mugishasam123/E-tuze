@@ -102,7 +102,14 @@ const SignupForm = () => {
           error: (error) => error.message
         }
       );
-      window.location.href = '/login';
+      console.log("userData.userType",userData.userType)
+
+      const redirectPath = userData.userType === 'provider' ? '/provider/dashboard/main' : '/client/dashboard/questionaire';
+      console.log("redirectPath1",redirectPath)
+
+      window.location.href = redirectPath;
+      console.log("redirectPath",redirectPath)
+
     } catch (error) {
       console.log(error);
     } finally {

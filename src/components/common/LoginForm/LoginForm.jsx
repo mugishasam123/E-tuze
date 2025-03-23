@@ -36,7 +36,7 @@ const LoginForm = () => {
         const userDoc = await getDoc(doc(db, "users", user.uid));
         const userData = userDoc.data();
         const basePath = userData.role === 'provider' ? '/provider/dashboard/main' : '/client/dashboard';
-        const redirectPath = nextPath ? `${basePath}/${nextPath}` : basePath;
+        const redirectPath =  basePath;
         navigate(redirectPath);
       }
     };
@@ -73,14 +73,24 @@ const LoginForm = () => {
       );
 
 
+      console.log("userCredential.user.uid",userCredential.user.uid)
       const userDoc = await getDoc(doc(db, "users", userCredential.user.uid));
+      console.log("userDoc",userDoc)
+
       const userData = { ...userDoc.data(), userEmail: userCredential.user.email };
+      console.log("userData",userData)
 
       // Construct redirect URL with query parameter if it exists
       const basePath = userData.role === 'provider' ? '/provider/dashboard/main' : '/client/dashboard';
-      const redirectPath = nextPath ? `${basePath}/${nextPath}` : basePath;
+      console.log("basePath",basePath)
+      console.log("nextPath",nextPath)
 
-      window.Location.href = redirectPath;
+      const redirectPath =  basePath;
+      console.log("redirectPath",redirectPath)
+
+      window.location.href = redirectPath;
+
+      console.log("redirected......")
 
       const userEmail = userCredential.user.email;
       const user = { ...userPromise.data(), userEmail };
