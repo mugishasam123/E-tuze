@@ -12,7 +12,7 @@ const JoinCard = ({ profession, description }) => (
       {description}
     </p>
     <div className="w-full">
-      <Button text="Continue &raquo;" url='/provider/register' />
+      <Button text="Continue &raquo;" url='/register' />
     </div>
   </div>
 );
